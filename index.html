@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+	<style type="text/css">
+.out{
+text-align:center;
+padding:20px 20px 0 20px;
+border:1px solid black;
+width:300px;
+height:80px;
+}
+span{
+font-size:30px;
+border:1px solid black;
+color:red;
+background-color:#0000ff;
+width:100px;
+height:80px;
+
+}
+button{
+margin-bottom:30px;
+height:40px;
+width:80px;
+
+
+}
+
+
+
+</style>
+
+
+	<script type="text/javascript">
+	var flag=null;
+		function time(){
+		fun1();
+		flag=setInterval("fun1()", 1000);
+		}
+	function fun1(){
+	var shiqi= new Date;
+	var shi=shiqi.getHours();
+	var fen=shiqi.getMinutes();
+	var miao=shiqi.getSeconds();
+	var spObj=document.getElementById("sp1")
+	spObj.innerHTML=shi+":"+fen+":"+miao;	
+		}
+      function fun(){
+	  if(flag!=null){
+      clearInterval(flag);
+	  flag=null;
+		}
+		else{
+		alert("没有启动页面时钟");
+		}
+	  }
+	</script>
+ </HEAD>
+
+ <BODY onload="fun1()">
+<div class="out"> <span  id="sp1"></span>
+  <button value="开始" onclick="time()">开始</button>
+  <button value="暂停" onclick="fun()">暂停</button></div>
+ </BODY>
+</HTML>
